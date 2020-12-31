@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" href="style.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Document</title>
+
+</head>
+
+<body>
+    <div class="row text-center">
+        <div class="jumbotron w-100 p-3 mb-2 bg-secondary text-white">
+            <h1> Weather Dashboard </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            Search for a city:
+            <input type="text" id="search">
+            <button id="searchBtn">Search</button>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Austin
+                </li>
+                <li class="list-group-item">
+                    Chicago
+                </li>
+                <li class="list-group-item">
+                    New york
+                </li>
+                <li class="list-group-item">
+                    Orlando
+                </li>
+                <li class="list-group-item">
+                    San Francisco
+                </li>
+                <li class="list-group-item">
+                    Seattle
+                </li>
+                <li class="list-group-item">
+                    Denver
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-sm-9">
+            <div class="bg-light p-5 ">
+                <h4 id="cityDate">atlanta(12/24/2020)</h4>
+
+                <p id="temp"> 90F </p>
+                <p id="humid"> 40% </p>
+                <p id="wind">4 MPH </p>
+                <p id="uv"> 9 </p>
+            </div>
+
+            <h4>5-Day Forecast</h4>
+
+            <div class="card-deck text-center ">
+                <div class="card" >
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h6 id="date0"> 12/12/2020</h6>
+                        </div>
+                        <img src="" alt="" id="image0">
+                        <p id="temp0">86F</p>
+                        <p id="humidity0">43%</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h6 id="date1">12/12/2020</h6>
+                        </div>
+                        <img src="" alt="" id="image1">
+                        <p id="temp1">84F</p>
+                        <p id="humidity1">40%</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h6 id="date2">12/12/2020</h6>
+                        </div>
+                        <img src="" alt="" id="image2">
+                        <p id="temp2">76F</p>
+                        <p id="humidity2">58%</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h6 id="date3">12/12/2020</h6>
+                        </div>
+                        <img src="" alt="" id="image3">
+                        <p id="temp3">76F</p>
+                        <p id="humidity3">76%</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h6 id="date4">12/12/2020</h6>
+                        </div>
+                        <img src="" alt="" id="image4">
+                        <p id="temp4">85F</p>
+                        <p id="humidity4">97%</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
