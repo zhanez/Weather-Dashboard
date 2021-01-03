@@ -1,8 +1,31 @@
 // search city
 // create on click
+var cityArray = localStorage.getItem("cityName") ? JSON.parse(localStorage.getItem("cityName")) : []
+
+
 var apiKey = "605b314b2b469d3d379b6803eeb77b40"
-$("#searchBtn").on("click", function () {
-    var cityName = $("#search").val()
+
+
+function displayCities() {
+    $(".list-group").empty()
+    for (let i = 0; i < cityArray.length; i++) {
+        var li = $("<li>")
+        li.text(cityArray[i])
+        li.addClass("list-group-item")
+        $(".list-group").append(li)
+    }
+
+    $(".list-group-item").on("click",function(){
+        var cityName = $(this).text()
+        console.log(cityName)
+        displayWeather(cityName)
+    })
+
+}
+
+displayCities()
+
+function displayWeather(cityName) {
     $.ajax({
         url: "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=imperial&appid=" + apiKey,
         method: "GET"
@@ -56,7 +79,7 @@ $("#searchBtn").on("click", function () {
                     var iconcode = fiveDayData.list[i].weather[0].icon
                     var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
 
-                    $("#image" + id).attr("src",  iconurl)
+                    $("#image" + id).attr("src", iconurl)
 
                     $("#temp" + id).empty()
                     $("#temp" + id).html("Temp: " + fiveDayData.list[i].main.temp + " F")
@@ -73,4 +96,18 @@ $("#searchBtn").on("click", function () {
         })
 
     })
+
+
+}
+
+$("#searchBtn").on("click", function () {
+    var cityName = $("#search").val()
+
+    if (cityArray.join("").includes(cityName) === false) {
+        cityArray.push(cityName)
+        localStorage.setItem("cityName", JSON.stringify(cityArray))
+    }
+    displayCities()
+    displayWeather(cityName)
+
 })
